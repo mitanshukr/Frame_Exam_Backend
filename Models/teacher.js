@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema(
+const teacherSchema = new Schema(
   {
     email: {
       type: String,
@@ -14,6 +14,15 @@ const userSchema = new Schema(
     name: {
       type: String,
       required: true,
+    },
+    schoolName: {
+      type: String,
+    },
+    schoolCity: {
+      type: String,
+    },
+    schoolEmail: {
+      type: String,
     },
     isEmailVerified: {
       type: Boolean,
@@ -39,4 +48,4 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Teacher", teacherSchema);

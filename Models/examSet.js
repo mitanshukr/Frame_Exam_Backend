@@ -15,6 +15,9 @@ const examSchema = new Schema(
     endDate: {
       type: Date,
     },
+    category: {
+      type: ["String"],
+    },
     allowedAttempts: {
       type: "Number",
     },
@@ -52,12 +55,8 @@ const examSchema = new Schema(
       type: ["Mixed"],
     },
     creator: {
-      id: {
-        type: "String",
-      },
-      email: {
-        type: "String",
-      },
+      _id: { type: mongoose.Schema.Types.ObjectId, ref: "Teacher" },
+      email: { type: String, ref: "Teacher" },
     },
   },
   { timestamps: true }

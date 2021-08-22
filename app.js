@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-const examDraftRoutes = require("./Routes/ExamDraftRoutes");
+const examDraftRoute = require("./Routes/ExamDraftRoute");
+const teacherAuthRoute = require("./Routes/TeacherAuthRoute");
 
 const app = express();
 
@@ -23,7 +24,8 @@ app.use((req, res, next) => {
 
 app.use(express.json()); //body-parser
 
-app.use("/exam/draft", examDraftRoutes);
+app.use("/exam/draft", examDraftRoute);
+app.use("/auth/teacher", teacherAuthRoute);
 
 //post exam //getExam //get draft //delete exam
 
